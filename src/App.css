@@ -6,6 +6,19 @@
   height: 40vmin;
   pointer-events: none;
 }
+.site-layout-content {
+  min-height: 280px;
+  padding: 24px;
+  background: #fff;
+}
+
+.ant-card-head-title{
+
+  color: #61dafb;
+}
+.ant-card-body{
+  min-height: 115px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
