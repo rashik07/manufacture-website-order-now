@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
-import { Menu } from 'antd';
+import { Menu,Button  } from 'antd';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 const Navbar = () => {
+    const [user] = useAuthState(auth);
+    const handleSignOut = () => {
+        signOut(auth);
+      };
     const items = [
         {
             label: (
@@ -13,11 +20,12 @@ const Navbar = () => {
             key: 'home',
 
         },
-        {
+      
+        { 
             label: (
-                <Link to="/login">
-                    Login
-                </Link>
+             user?  <Button onClick={handleSignOut}>sign out</Button> :<Link to="/login">
+             Login
+         </Link>
             ),
         
             key: 'login',
