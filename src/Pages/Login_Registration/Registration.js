@@ -9,7 +9,9 @@ import auth from '../../firebase.init';
 
 
 const Registration = () => {
+
     const [agree, setAgree] = useState(false);
+ 
     const [
         createUserWithEmailAndPassword,
         user,
@@ -29,9 +31,11 @@ const Registration = () => {
     }
 
   
-  const onFinish = (values) => {
-    createUserWithEmailAndPassword(values.email, values.password);
-    updateProfile({ displayName: values.email });
+  const onFinish = async  ( values) => {
+    await createUserWithEmailAndPassword(values.email, values.password);
+    await updateProfile({ displayName: values.name });
+    
+    console.log('updated profile');
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -71,6 +75,19 @@ const Registration = () => {
               onFinishFailed={onFinishFailed}
               autoComplete="off"
             >
+              <Form.Item
+                label="Name"
+                name="name"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your username!",
+                  },
+                ]}
+              >
+                <Input />
+              </Form.Item>
+
               <Form.Item
                 label="Email"
                 name="email"

@@ -5,6 +5,7 @@ import Banner from './Banner';
 import OfferCard from './OfferCard';
 import { Card, Col, Layout, Row } from 'antd';
 import Footers from '../Shared/Footers';
+import Products from '../Products/Products';
 
 
 
@@ -20,6 +21,8 @@ const Home = () => {
             >
                 <div className="site-layout-content">
                     <OfferCard></OfferCard>
+
+                    <Products></Products>
                     
                 </div>
                 <Footers></Footers>

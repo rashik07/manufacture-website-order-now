@@ -1,0 +1,34 @@
+[
+  {
+    "name": "HONDA Looking Glass",
+    "short_discription": "HONDA Looking Glass Right side for Honda Hornet /160R DREAM NEO,LIVO,SHINE,HORNET,X-BLADE Mirror MOTOR BIKE LOOKING GLASS R Side",
+    "price": 400,
+    "available_quantity": 1000,
+    "minimum_order": 50,
+    "img": "https://static-01.daraz.com.bd/p/b77b601672a9d00f9599bb03995f950c.jpg"
+  },
+  {
+    "name": "Bicycle Disc Brake",
+    "short_discription": "Bicycle Disc Brake F160/R140 for front brake, F180/R160 for rear brake",
+    "price": 199,
+    "available_quantity": 1000,
+    "minimum_order": 50,
+    "img": "https://static-01.daraz.com.bd/p/ca7dcc29368d47e5e00fbebc41593bbb.jpg"
+  },
+  {
+    "name": "Bicycle Repair Tool Set",
+    "short_discription": "Bicycle Repair Tool Set Bicycle 8 Sizes Octagon Wrench Spanner Home Outdoor Cycling Supply Cycle Wrench Tool - Silver",
+    "price": 90,
+    "available_quantity": 1000,
+    "minimum_order": 50,
+    "img": "https://static-01.daraz.com.bd/p/mdc/c38e049d3848d8563b8677b8aa500c91.jpg"
+  },
+   {
+    "name": "Bicycle Repair Tool Set",
+    "short_discription": "Bicycle Repair Tool Set Bicycle 8 Sizes Octagon Wrench Spanner Home Outdoor Cycling Supply Cycle Wrench Tool - Silver",
+    "price": 90,
+    "available_quantity": 1000,
+    "minimum_order": 50,
+    "img": "https://static-01.daraz.com.bd/p/mdc/c38e049d3848d8563b8677b8aa500c91.jpg"
+  }
+]
