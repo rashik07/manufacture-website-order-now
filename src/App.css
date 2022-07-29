@@ -17,6 +17,9 @@ img {
   height: 300px;
   object-fit: cover;
 }
+.site-layout-background {
+  background: #fff;
+}
 .ant-card-head-title{
 
   color: #61dafb;

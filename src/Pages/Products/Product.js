@@ -1,9 +1,14 @@
 import React from "react";
 import { Avatar, Button, Card , Col, Row} from "antd";
+import {  useNavigate } from "react-router-dom";
 const Product = (product) => {
   const { Meta } = Card;
 
-  console.log(product.product.name);
+  console.log(product.product);
+  const navigate = useNavigate();
+  const navigateToProductDetail= (id) => {
+    navigate(`/buy/${id}`)
+  }
   return (
     <div>
       
@@ -22,7 +27,7 @@ const Product = (product) => {
 
               />
               <p>Price:{product.product.price}</p>
-              <Button>Purchase</Button>
+              <Button onClick={() => navigateToProductDetail(product.product._id)} > Order Now</Button>
             </Card>
           </Col>
         

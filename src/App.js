@@ -1,11 +1,15 @@
-import './App.css';
-import 'antd/dist/antd.css';
+import "./App.css";
+import "antd/dist/antd.css";
 import { Routes, Route, Link } from "react-router-dom";
-import Navbar from './Pages/Shared/Navbar';
-import Home from './Pages/Home/Home';
-import { Breadcrumb, Layout, Menu } from 'antd';
-import Login from './Pages/Login_Registration/Login';
-import Registration from './Pages/Login_Registration/Registration';
+import Navbar from "./Pages/Shared/Navbar";
+import Home from "./Pages/Home/Home";
+import { Breadcrumb, Layout, Menu } from "antd";
+import Login from "./Pages/Login_Registration/Login";
+import Registration from "./Pages/Login_Registration/Registration";
+import RequreAuth from "./Pages/Login_Registration/RequreAuth";
+import SingleProduct from "./Pages/Products/SingleProduct";
+import Myorder from "./Pages/Order/Myorder";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 
 const { Header, Content, Footer } = Layout;
 
@@ -13,17 +17,31 @@ function App() {
   return (
     <div className="App">
       <Layout className="layout">
-
-
         <Navbar></Navbar>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login></Login>} />
           <Route path="/registration" element={<Registration></Registration>} />
-
-
-
+          <Route
+            path="/buy/:product_id"
+            element={
+              <RequreAuth>
+                <SingleProduct></SingleProduct>
+              </RequreAuth>
+            }
+          ></Route>
+       
+          <Route path="dashboard" element={<Dashboard />}>
+            <Route
+              path="myorder"
+              element={
+                <RequreAuth>
+                  <Myorder></Myorder>
+                </RequreAuth>
+              }
+            />
+          </Route>
         </Routes>
       </Layout>
     </div>
