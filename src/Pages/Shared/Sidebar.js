@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Menu } from "antd";
+import auth from '../../firebase.init';
+
+import { useAuthState } from 'react-firebase-hooks/auth';
+import useAdmin from "../Hooks/useAdmin";
+
 const Sidebar = () => {
-  const [collapsed, setCollapsed] = useState(false);
-
-  const toggleCollapsed = () => {
-    setCollapsed(!collapsed);
-  };
-
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
   const items = [
     
     {
@@ -20,6 +21,11 @@ const Sidebar = () => {
 
       key: "myorder",
     },
+    admin? { 
+      label: <Link to="/dashboard/allusers">All user</Link>,
+
+      key: "allusers",
+    }:"",
   ];
   return (
     <div>
@@ -29,7 +35,6 @@ const Sidebar = () => {
           defaultOpenKeys={["sub1"]}
           mode="inline"
           theme="dark"
-          inlineCollapsed={collapsed}
           items={items}
           style={{
             height: '100%',

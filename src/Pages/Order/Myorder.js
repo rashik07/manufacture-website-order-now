@@ -18,7 +18,12 @@ const Myorder = () => {
   
   useEffect(() => {
     if(user){
-        fetch(`http://localhost:5000/orders?customer=${email}`)
+        fetch(`http://localhost:5000/orders?email=${email}`,{
+          method: 'GET',
+          headers:{
+              authorization: `Bearer ${localStorage.getItem('accessToken')}`
+          }
+      })
         .then((res) => res.json())
         .then((data) => {
           
@@ -69,10 +74,10 @@ const Myorder = () => {
       render: (_, record) =>
         products.length >= 1 ? (
           <Popconfirm
-            title="Sure to delete?"
+            title="Sure to cancel?"
             onConfirm={() => handleCancel(record._id)}
           >
-            <a>Delete</a>
+            <a>Cancel</a>
           </Popconfirm>
         ) : null,
     },

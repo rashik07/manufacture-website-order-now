@@ -6,6 +6,7 @@ import { Button,Skeleton } from "antd";
 import {
     GoogleOutlined
   } from '@ant-design/icons';
+import useToken from '../Hooks/useToken';
 const Social_Login = () => {
 
   const location = useLocation();
@@ -13,7 +14,10 @@ const Social_Login = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const navigate= useNavigate();
     let errorElement;
-    if (user) {
+
+    const [token]  = useToken(user);
+    
+    if (token) {
       navigate(from, { replace: true });
     }
   

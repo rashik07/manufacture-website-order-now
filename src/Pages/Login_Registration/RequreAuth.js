@@ -7,6 +7,7 @@ import auth from '../../firebase.init';
 const RequreAuth = ({ children }) => {
     const [user, loading] = useAuthState(auth);
     const location = useLocation();
+    
    if(loading) {
     return <Skeleton />;
    }

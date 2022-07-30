@@ -10,6 +10,9 @@ import RequreAuth from "./Pages/Login_Registration/RequreAuth";
 import SingleProduct from "./Pages/Products/SingleProduct";
 import Myorder from "./Pages/Order/Myorder";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import Page_404 from "./Pages/Page_404/Page_404";
+import AllUsers from "./Pages/Dashboard/AllUsers";
+import RequireAdmin from "./Pages/Login_Registration/RequireAdmin";
 
 const { Header, Content, Footer } = Layout;
 
@@ -41,7 +44,17 @@ function App() {
                 </RequreAuth>
               }
             />
+            <Route
+              path="allusers"
+              element={
+                <RequireAdmin>
+                  <AllUsers></AllUsers>
+                </RequireAdmin>
+              }
+            />
           </Route>
+
+          <Route path='*' element={<Page_404></Page_404>}></Route>
         </Routes>
       </Layout>
     </div>

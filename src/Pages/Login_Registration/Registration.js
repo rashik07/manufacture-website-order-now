@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 
 import { Button, Skeleton, Form, Input, Layout } from "antd";
 import auth from '../../firebase.init';
+import useToken from '../Hooks/useToken';
 
 
 
@@ -19,15 +20,15 @@ const Registration = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-   
+    const [token]  = useToken(user);
     const navigate = useNavigate();
 
     if(loading) {
       return <Skeleton />;
      }
 
-    if (user) {
-        navigate('/home');
+    if (token) {
+        navigate('/home'); 
     }
 
   
