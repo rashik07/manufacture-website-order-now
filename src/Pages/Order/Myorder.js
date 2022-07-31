@@ -4,6 +4,7 @@ import { Layout, Menu } from "antd";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import { Link } from "react-router-dom";
 
 const Myorder = () => {
   const [user, loading] = useAuthState(auth);
@@ -65,14 +66,32 @@ const Myorder = () => {
       dataIndex: "phone",
     },
     {
-      title: "Adress",
-      dataIndex: "adress",
+      title: "Address",
+      dataIndex: "address",
+    },
+    {
+      title: "Payable amount",
+      dataIndex: "paid_amount",
+    },
+    {
+      title: "Payment",
+      dataIndex: "payment",
+      render: (_, record) =>
+        products.length >= 1 ? (
+          
+          <Link
+            to={`/dashboard/payment/${record._id}`}
+          >
+            <a>Click Here for Payment</a>
+          </Link>
+        ) : null,
     },
     {
       title: "operation",
       dataIndex: "operation",
       render: (_, record) =>
         products.length >= 1 ? (
+          
           <Popconfirm
             title="Sure to cancel?"
             onConfirm={() => handleCancel(record._id)}

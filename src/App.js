@@ -13,6 +13,7 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import Page_404 from "./Pages/Page_404/Page_404";
 import AllUsers from "./Pages/Dashboard/AllUsers";
 import RequireAdmin from "./Pages/Login_Registration/RequireAdmin";
+import Payment from "./Pages/Order/Payment";
 
 const { Header, Content, Footer } = Layout;
 
@@ -41,6 +42,14 @@ function App() {
               element={
                 <RequreAuth>
                   <Myorder></Myorder>
+                </RequreAuth>
+              }
+            />
+            <Route
+              path="payment/:id"
+              element={
+                <RequreAuth>
+                  <Payment></Payment>
                 </RequreAuth>
               }
             />

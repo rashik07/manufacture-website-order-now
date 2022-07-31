@@ -91,6 +91,7 @@ const Order = (product) => {
           name: user.displayName,
           email: user.email,
           quantity: product.product.minimum_order,
+          paid_amount:product.product.minimum_order *product.product.price,
         }}
         onValuesChange={onFormLayoutChange}
         onFinish={onFinish}
@@ -111,6 +112,9 @@ const Order = (product) => {
             max={product.product.available_quantity}
             placeholder="input placeholder"
           />
+        </Form.Item>
+        <Form.Item label="Payable" name="paid_amount">
+          <Input placeholder="enter phone no" />
         </Form.Item>
         <Form.Item label="Phone " name="phone">
           <Input placeholder="enter phone no" />
