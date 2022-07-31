@@ -11,15 +11,25 @@ const Sidebar = () => {
   const [admin] = useAdmin(user);
   const items = [
     
-    {
-      label: <Link to="/dashboard">Dashboard</Link>,
+    admin? {
+      label: <Link to="/dashboard/addProduct">Add Products</Link>,
 
-      key: "dashboard",
-    },
+      key: "addproduct",
+    }:"",
+    admin? {
+      label: <Link to="/dashboard/productList">Product List</Link>,
+
+      key: "productlist",
+    }:"",
     {
       label: <Link to="/dashboard/myorder">My order</Link>,
 
       key: "myorder",
+    },
+    {
+      label: <Link to="/dashboard/addReview">Add Review</Link>,
+
+      key: "addreview",
     },
     admin? { 
       label: <Link to="/dashboard/allusers">All user</Link>,

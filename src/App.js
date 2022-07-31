@@ -14,6 +14,9 @@ import Page_404 from "./Pages/Page_404/Page_404";
 import AllUsers from "./Pages/Dashboard/AllUsers";
 import RequireAdmin from "./Pages/Login_Registration/RequireAdmin";
 import Payment from "./Pages/Order/Payment";
+import AddProduct from "./Pages/Dashboard/AddProduct";
+import ProductList from "./Pages/Dashboard/ProductList";
+import AddReview from "./Pages/Dashboard/AddReview";
 
 const { Header, Content, Footer } = Layout;
 
@@ -43,6 +46,30 @@ function App() {
                 <RequreAuth>
                   <Myorder></Myorder>
                 </RequreAuth>
+              }
+            />
+            <Route
+              path="addReview"
+              element={
+                <RequreAuth>
+                  <AddReview></AddReview>
+                </RequreAuth>
+              }
+            />
+            <Route
+              path="addProduct"
+              element={
+                <RequireAdmin>
+                  <AddProduct></AddProduct>
+                </RequireAdmin>
+              }
+            />
+            <Route
+              path="productList"
+              element={
+                <RequireAdmin>
+                  <ProductList></ProductList>
+                </RequireAdmin>
               }
             />
             <Route
