@@ -17,6 +17,11 @@ const Navbar = () => {
 
       key: "home",
     },
+    {
+      label: <Link to="/blogs">Blog</Link>,
+
+      key: "blogs",
+    },
     user
       ? {
           label: <Link to="/dashboard">Dashboard</Link>,

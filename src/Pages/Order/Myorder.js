@@ -79,11 +79,12 @@ const Myorder = () => {
       render: (_, record) =>
         products.length >= 1 ? (
           
-          <Link
+          !record.paid ? <Link
             to={`/dashboard/payment/${record._id}`}
           >
             <a>Click Here for Payment</a>
-          </Link>
+          </Link>: <span style={{color:"green"}}>paid</span> 
+          
         ) : null,
     },
     {
@@ -92,7 +93,7 @@ const Myorder = () => {
       render: (_, record) =>
         products.length >= 1 ? (
           
-          <Popconfirm
+          !record.paid &&  <Popconfirm
             title="Sure to cancel?"
             onConfirm={() => handleCancel(record._id)}
           >

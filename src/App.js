@@ -17,6 +17,7 @@ import Payment from "./Pages/Order/Payment";
 import AddProduct from "./Pages/Dashboard/AddProduct";
 import ProductList from "./Pages/Dashboard/ProductList";
 import AddReview from "./Pages/Dashboard/AddReview";
+import Blogs from "./Pages/Home/Blogs";
 
 const { Header, Content, Footer } = Layout;
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login></Login>} />
           <Route path="/registration" element={<Registration></Registration>} />
+          <Route path="/blogs" element={<Blogs></Blogs>} />
           <Route
             path="/buy/:product_id"
             element={
