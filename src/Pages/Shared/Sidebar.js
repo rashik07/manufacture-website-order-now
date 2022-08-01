@@ -21,16 +21,16 @@ const Sidebar = () => {
 
       key: "productlist",
     }:"",
-    {
+    !admin ?{
       label: <Link to="/dashboard/myorder">My order</Link>,
 
       key: "myorder",
-    },
-    {
+    }:"",
+    !admin ?{
       label: <Link to="/dashboard/addReview">Add Review</Link>,
 
       key: "addreview",
-    },
+    }:"",
     admin? { 
       label: <Link to="/dashboard/allusers">All user</Link>,
 
