@@ -18,6 +18,8 @@ import AddProduct from "./Pages/Dashboard/AddProduct";
 import ProductList from "./Pages/Dashboard/ProductList";
 import AddReview from "./Pages/Dashboard/AddReview";
 import Blogs from "./Pages/Home/Blogs";
+import ManageOrders from "./Pages/Dashboard/ManageOrders";
+import MyProtfolio from "./Pages/Dashboard/MyProtfolio";
 
 const { Header, Content, Footer } = Layout;
 
@@ -32,6 +34,7 @@ function App() {
           <Route path="/login" element={<Login></Login>} />
           <Route path="/registration" element={<Registration></Registration>} />
           <Route path="/blogs" element={<Blogs></Blogs>} />
+          <Route path="/myProtfolio" element={<MyProtfolio></MyProtfolio>} />
           <Route
             path="/buy/:product_id"
             element={
@@ -71,6 +74,14 @@ function App() {
               element={
                 <RequireAdmin>
                   <ProductList></ProductList>
+                </RequireAdmin>
+              }
+            />
+            <Route
+              path="manageOrders"
+              element={
+                <RequireAdmin>
+                  <ManageOrders></ManageOrders>
                 </RequireAdmin>
               }
             />

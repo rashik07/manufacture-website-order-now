@@ -33,7 +33,7 @@ const Myorder = () => {
         });
     }
  
-  }, [user]);
+  }, [products]);
 
   const handleCancel = (id) => {
     console.log(id);

@@ -1,7 +1,68 @@
 .App {
   text-align: center;
 }
+*{
+  margin: 0;
+  padding: 0;
+}
 
+section .container {
+  width: auto;
+  margin: 0 auto;
+}
+.item svg{
+  font-size: 50px;
+}
+.heading_info *{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.heading_info h2 {
+  text-transform: uppercase;
+  font-size: 50px;
+  color: #28AAA9;
+}
+
+.heading_info p {
+  text-transform: uppercase;
+  color: #00033E;
+}
+.border span {
+  width: 15px;
+  height: 2px;
+  background: #1B7285;
+  display: inline-block;
+}
+.border span:nth-child(1) {
+  width: 60px;
+  background: #2CA9A9;
+}
+.border span:nth-child(2) {
+  width: 30px;
+  background: #1C7688;
+}
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 0;
+}
+
+.item h4 {
+  font-size: 40px;
+  color: #00033E;
+}
+
+.item p {
+  font-size: 18px;
+  color: #28AAA9;
+}
+.item img {
+  width: 100px;
+}
+.item h4 span {
+  font-size: 23px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

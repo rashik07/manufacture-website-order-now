@@ -36,6 +36,11 @@ const Sidebar = () => {
 
       key: "allusers",
     }:"",
+    admin? { 
+      label: <Link to="/dashboard/manageOrders">Manage Orders</Link>,
+
+      key: "manageOrders",
+    }:"",
   ];
   return (
     <div>
