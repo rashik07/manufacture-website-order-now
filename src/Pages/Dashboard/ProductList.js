@@ -12,7 +12,7 @@ const ProductList = () => {
     const email = user?.email;
     console.log(email);
     useEffect(() => {
-      fetch(`http://localhost:5000/products/`)
+      fetch(`https://guarded-spire-98931.herokuapp.com/products/`)
         .then((res) => res.json())
         .then((data) => {
      
@@ -24,7 +24,7 @@ const ProductList = () => {
   
     const handleDelete = (id) => {
       console.log(id);
-      const url = `http://localhost:5000/products/${id}`;
+      const url = `https://guarded-spire-98931.herokuapp.com/products/${id}`;
       fetch(url, {
         method: "DELETE",
       })

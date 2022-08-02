@@ -11,7 +11,7 @@ const AddProduct = () => {
     const navigate = useNavigate();
     const onFinish = (values) => {
       console.log(values);
-      const url = `http://localhost:5000/products`;
+      const url = `https://guarded-spire-98931.herokuapp.com/products`;
       fetch(url, {
         method: "POST",
         headers: {

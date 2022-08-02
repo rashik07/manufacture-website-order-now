@@ -1,5 +1,5 @@
 import { Popconfirm, Skeleton, Table } from "antd";
-import React from "react";
+import React, { useState } from "react";
 import {
     QueryClient,
     QueryClientProvider,
@@ -7,8 +7,8 @@ import {
   } from "@tanstack/react-query";
 
 const AllUsers = () => {
-
-  const { data: users, isLoading, refetch } = useQuery(['users'], () => fetch('http://localhost:5000/user', {
+  const [user, setUser] = useState([]);
+  const { data: users, isLoading, refetch } = useQuery(['users'], () => fetch('https://guarded-spire-98931.herokuapp.com/user', {
     method: 'GET',
     headers:{
         authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -19,7 +19,7 @@ if (isLoading) {
 }
 // const { email, role } = users;
     const makeAdmin = (email) => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://guarded-spire-98931.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -30,21 +30,23 @@ if (isLoading) {
           console.log(data);
           refetch();
         })
-            // .then(res => {
-            //     if(res.status === 403){
-            //         toast.error('Failed to Make an admin');
-            //     }
-            //     return res.json()})
-            // .then(data => {
-            //     if (data.modifiedCount > 0) {
-            //         refetch();
-            //         toast.success(`Successfully made an admin`);
-            //     }
-
-            // })
+           
     }
 
- 
+
+    const handleDelete = (id) => {
+      console.log(id);
+      const url = `https://guarded-spire-98931.herokuapp.com/user/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          // const remaining = user.filter((user) => user._id !== id);
+          setUser(data);
+        });
+    };
 
 
   const columns = [
@@ -75,7 +77,7 @@ if (isLoading) {
       users.length >= 1 ? (
           <Popconfirm
             title="Sure to Cancel?"
-            // onConfirm={() => handleCancel(record._id)}
+            onConfirm={() => handleDelete(record._id)}
           >
             <a>Delete</a>
           </Popconfirm>

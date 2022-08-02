@@ -38,7 +38,7 @@ const Order = (product) => {
   const navigate = useNavigate();
 
   const onFinish = (values) => {
-    fetch("http://localhost:5000/orders", {
+    fetch("https://guarded-spire-98931.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -54,7 +54,7 @@ const Order = (product) => {
       const updatedProduct = { quantity };
   
       // send data to the server
-      const url = `http://localhost:5000/products/${values.id}`;
+      const url = `https://guarded-spire-98931.herokuapp.com/products/${values.id}`;
       fetch(url, {
         method: "PUT",
         headers: {

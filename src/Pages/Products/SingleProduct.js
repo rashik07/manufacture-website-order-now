@@ -12,7 +12,7 @@ const SingleProduct = () => {
   const [visible, setVisible] = useState(false);
   const { product_id } = useParams();
   const { isLoading, error, data } = useQuery(["product", product_id], () =>
-    fetch(`http://localhost:5000/products/${product_id}`).then((res) =>
+    fetch(`https://guarded-spire-98931.herokuapp.com/products/${product_id}`).then((res) =>
       res.json()
     )
   );

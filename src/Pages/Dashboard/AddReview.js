@@ -11,7 +11,7 @@ const AddReview = () => {
     const navigate = useNavigate();
     const onFinish = (values) => {
       console.log(values);
-      const url = `http://localhost:5000/reviews`;
+      const url = `https://guarded-spire-98931.herokuapp.com/reviews`;
       fetch(url, {
         method: "POST",
         headers: {

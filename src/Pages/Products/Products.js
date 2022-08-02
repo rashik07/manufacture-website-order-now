@@ -9,7 +9,7 @@ import { Avatar, Card, Col, Row,Skeleton } from "antd";
 
 const Products = () => {
   const { isLoading, error, data } = useQuery(["product"], () =>
-    fetch("http://localhost:5000/products").then((res) => res.json())
+    fetch("https://guarded-spire-98931.herokuapp.com/products").then((res) => res.json())
   );
   if (isLoading) {
     return <Skeleton />;

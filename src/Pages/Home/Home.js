@@ -5,6 +5,7 @@ import OfferCard from "./OfferCard";
 import { Card, Col, Layout, Row } from "antd";
 import Footers from "../Shared/Footers";
 import Products from "../Products/Products";
+import Review from "./Review";
 
 const Home = () => {
   const { Header, Content, Footer } = Layout;
@@ -20,6 +21,7 @@ const Home = () => {
           <OfferCard></OfferCard>
 
           <Products></Products>
+          <Review></Review>
         </div>
         <Footers></Footers>
       </Content>

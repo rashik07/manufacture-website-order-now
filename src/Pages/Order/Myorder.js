@@ -19,7 +19,7 @@ const Myorder = () => {
   
   useEffect(() => {
     if(user){
-        fetch(`http://localhost:5000/orders?email=${email}`,{
+        fetch(`https://guarded-spire-98931.herokuapp.com/orders?email=${email}`,{
           method: 'GET',
           headers:{
               authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -37,7 +37,7 @@ const Myorder = () => {
 
   const handleCancel = (id) => {
     console.log(id);
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://guarded-spire-98931.herokuapp.com/orders/${id}`;
     fetch(url, {
       method: "DELETE",
     })
